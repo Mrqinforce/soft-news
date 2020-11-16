@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 /**
- * 缁熶竴寮傚父鎷︽埅澶勭悊
- * 鍙互閽堝寮傚父鐨勭被鍨嬭繘琛屾崟鑾凤紝鐒跺悗杩斿洖json淇℃伅鍒板墠绔�
+ * 统一异常拦截处理
+ * 可以针对异常的类型进行捕获，然后返回json信息到前端
  * @author: mqxu
  * @create: 2020-11-15
  */

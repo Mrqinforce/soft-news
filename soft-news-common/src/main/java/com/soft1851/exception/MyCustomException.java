@@ -3,8 +3,8 @@ package com.soft1851.exception;
 import com.soft1851.result.ResponseStatusEnum;
 
 /**
- * 鑷畾涔夊紓甯�
- * 渚夸簬瑙ｈ€︼紝service涓巆ontroller閿欒鐨勮В鑰︼紝涓嶄細琚玸ervice杩斿洖鐨勭被鍨嬭€岄檺鍒�
+ * 自定义异常
+ * 便于解耦，service与controller错误的解耦，不会被service返回的类型而限制
  *
  * @author: mqxu
  * @create: 2020-11-15
@@ -14,8 +14,8 @@ public class MyCustomException extends RuntimeException {
     private ResponseStatusEnum responseStatusEnum;
 
     public MyCustomException(ResponseStatusEnum responseStatusEnum) {
-        super("寮傚父鐘舵€佺爜涓猴細" + responseStatusEnum.status()
-                + "锛涘叿浣撳紓甯镐俊鎭负锛�" + responseStatusEnum.msg());
+        super("异常状态码为：" + responseStatusEnum.status()
+                + "；具体异常信息为：" + responseStatusEnum.msg());
         this.responseStatusEnum = responseStatusEnum;
     }
 

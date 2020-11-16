@@ -2,8 +2,21 @@ package com.soft1851.pojo;
 
 import java.util.Date;
 import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import java.util.Date;
 
 @Table(name = "app_user")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AppUser {
     @Id
     private String id;

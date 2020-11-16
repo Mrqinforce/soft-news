@@ -3,7 +3,7 @@ package com.soft1851.exception;
 import com.soft1851.result.ResponseStatusEnum;
 
 /**
- * @description: 浼橀泤鐨勭粺涓€澶勭悊寮傚父
+ * @description: 优雅的统一处理异常
  * @author: mqxu
  * @create: 2020-11-15
  **/
