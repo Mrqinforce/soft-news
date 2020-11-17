@@ -3,6 +3,7 @@ package com.soft1851.user.controller;
 import com.soft1851.api.BaseController;
 import com.soft1851.api.controller.user.UserControllerApi;
 import com.soft1851.pojo.AppUser;
+import com.soft1851.pojo.bo.UpdateUserInfoBO;
 import com.soft1851.pojo.vo.UserAccountInfoVO;
 import com.soft1851.result.GraceResult;
 import com.soft1851.result.ResponseStatusEnum;
@@ -13,11 +14,14 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
+import java.util.Map;
 
 /**
  * @ClassName $(Name)
@@ -50,6 +54,18 @@ public class UserController extends BaseController implements UserControllerApi 
         //3、属性拷贝
         BeanUtils.copyProperties(user,accountInfoVO);
         return GraceResult.ok(accountInfoVO);
+    }
+
+    @Override
+    public GraceResult updateUserInfo(@Valid UpdateUserInfoBO updateUserInfoBO, BindingResult result) {
+        //判断BindingResult是否保存错误的验证信息，如果有，直接return
+        if(result.hasErrors()){
+            Map<String,String> errorMap = getErrors(result);
+            return GraceResult.errorMap(errorMap);
+        }
+        //执行更新用户信息操作
+        userService.updateUserInfo(updateUserInfoBO);
+        return GraceResult.ok();
     }
 
     private AppUser getUser(String userId){

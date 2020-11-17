@@ -1,5 +1,6 @@
 package com.soft1851.api.controller.user;
 
+import com.soft1851.pojo.bo.UpdateUserInfoBO;
 import com.soft1851.result.GraceResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -35,4 +36,15 @@ public interface UserControllerApi {
    @ApiOperation(value = "获取用户基本信息", notes = "获取用户基本信息", httpMethod = "POST")
    @PostMapping("/userInfo")
    GraceResult getUserInfo(@RequestParam String userId);
+
+
+   /**
+    * 更新用户账户信息
+    * @param updateUserInfoBO
+    * @param result
+    * @return
+    */
+   @ApiOperation(value = "更新用户账户信息",notes = "更新用户账户信息",httpMethod = "POST")
+   @PostMapping("/updateUserInfo")
+   GraceResult updateUserInfo(@RequestBody @Valid UpdateUserInfoBO updateUserInfoBO, BindingResult result);
 }
