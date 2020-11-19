@@ -24,5 +24,6 @@ public class FileResource {
     private String host;
     private String endpoint;
     private String bucketName;
+    private String objectName;
     private String ossHost;
 }

@@ -23,6 +23,11 @@
       "sourceType": "com.soft1851.files.resource.FileResource"
     },
     {
+      "name": "file.object-name",
+      "type": "java.lang.String",
+      "sourceType": "com.soft1851.files.resource.FileResource"
+    },
+    {
       "name": "file.oss-host",
       "type": "java.lang.String",
       "sourceType": "com.soft1851.files.resource.FileResource"
