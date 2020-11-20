@@ -44,6 +44,18 @@ public class AdminMsgController extends BaseController implements AdminMsgContro
         }
     }
 
+    @Override
+    public GraceResult adminIsExist(String username) {
+        checkAdminExist(username);
+        return GraceResult.ok();
+    }
+    private void checkAdminExist(String username) {
+        AdminUser admin = adminUserService.queryAdminByUsername(username);
+        if(admin != null) {
+            GraceException.display(ResponseStatusEnum.ADMIN_USERNAME_EXIST_ERROR);
+        }
+    }
+
 
     private void doLoginSettings(AdminUser admin,HttpServletRequest request,HttpServletResponse response) {
         //保存token到redis

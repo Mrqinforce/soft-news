@@ -36,4 +36,14 @@ public interface AdminMsgControllerApi {
     @PostMapping("/adminLogin")
     @ApiOperation(value = "管理员登录",notes = "管理员登录",httpMethod = "POST")
     GraceResult adminLogin(@RequestBody AdminLoginBO adminLoginBO, HttpServletRequest request, HttpServletResponse response);
+
+    /**
+     * 查询管理员是否存在
+     * @param username 管理员用户名
+     * @throws GraceResult
+     */
+
+    @PostMapping("/adminIsExist")
+    @ApiOperation(value = "查询管理员是否存在",notes = "查询管理员是否存在",httpMethod = "POST")
+    GraceResult adminIsExist(@RequestParam String username);
 }
