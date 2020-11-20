@@ -1,4 +1,9 @@
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/Fans.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/UpdateUserInfoBO.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/AppUser.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/RegistLoginBO.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/AdminLoginBO.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/NewAdminBO.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/AdminUser.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/vo/UserAccountInfoVO.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/vo/AppUserVO.java
