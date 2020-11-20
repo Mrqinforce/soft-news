@@ -5,6 +5,7 @@ import com.soft1851.files.resource.FileResource;
 import com.soft1851.files.service.UploadService;
 import com.soft1851.result.GraceResult;
 import com.soft1851.result.ResponseStatusEnum;
+import com.soft1851.utils.extend.AliImageReviewUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -28,6 +29,7 @@ public class FileUploadController implements FileUploadControllerApi {
 
     private final UploadService uploadService;
     private final FileResource fileResource;
+    private final AliImageReviewUtil aliImageReviewUtil;
 
 
     @Override
@@ -57,11 +59,35 @@ public class FileUploadController implements FileUploadControllerApi {
             if(StringUtils.isNotBlank(path)){
                 finalPath = fileResource.getHost()+path;
             }else {
-                return GraceResult.errorCustom(ResponseStatusEnum.FILE_UPLOAD_NULL_ERROR);
+                return GraceResult.errorCustom(ResponseStatusEnum.FILE_UPLOAD_FAILD);
             }
-            return GraceResult.ok(finalPath);
+            return GraceResult.ok(doAliimageReview(finalPath));
         }
         return null;
+    }
+    /**
+     * 检测不通过的默认图片
+     */
+    public static final String FAILED_IMAGE_URL = "https://sillyforce.oss-cn-beijing.aliyuncs.com/soft-news/201119BXRRMTGN54.jpg";
+
+    /**
+     * 阿里云图片智能检测
+     *
+     * @param pendingImageUrl 图片路径
+     * @return 返回结果
+     */
+    private String doAliimageReview(String pendingImageUrl) {
+        log.info(pendingImageUrl);
+        boolean result = false;
+        try {
+            result = aliImageReviewUtil.reviewImage(pendingImageUrl);
+        } catch (Exception e) {
+            System.err.println("图片识别出错");
+        }
+        if (!result) {
+            return  FAILED_IMAGE_URL;
+        }
+        return pendingImageUrl;
     }
 
     @Override
