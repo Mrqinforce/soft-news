@@ -49,6 +49,30 @@ public class AdminMsgController extends BaseController implements AdminMsgContro
         checkAdminExist(username);
         return GraceResult.ok();
     }
+
+    @Override
+    public GraceResult addNewAdmin(HttpServletResponse response, HttpServletRequest request, NewAdminBO newAdminBO) {
+        //base64不为空，则代表人脸入库，否则需要用户输入密码和确认密码
+        if(StringUtils.isBlank(newAdminBO.getImg64())) {
+            if(StringUtils.isBlank(newAdminBO.getPassword()) ||
+                    StringUtils.isBlank(newAdminBO.getConfirmPassword())
+            ) {
+                return GraceResult.errorCustom(ResponseStatusEnum.ADMIN_PASSWORD_NULL_ERROR);
+            }
+        }
+        //密码不为空 则必须判断俩次输入一致
+        if(StringUtils.isNotBlank(newAdminBO.getPassword())) {
+            if(!newAdminBO.getPassword().equalsIgnoreCase(newAdminBO.getConfirmPassword())) {
+                return GraceResult.errorCustom(ResponseStatusEnum.ADMIN_PASSWORD_ERROR);
+            }
+        }
+        //校验用户名唯一
+        checkAdminExist(newAdminBO.getUsername());
+        //调用service存入admin信息
+        adminUserService.createAdminUser(newAdminBO);
+        return GraceResult.ok();
+    }
+
     private void checkAdminExist(String username) {
         AdminUser admin = adminUserService.queryAdminByUsername(username);
         if(admin != null) {

@@ -45,12 +45,12 @@ public class AdminUserServiceImpl implements AdminUserService {
         adminUser.setUsername(newAdminBO.getUsername());
         adminUser.setUsername(newAdminBO.getAdminName());
         //如果密码不为空。则需要加密密码，存入数据库
-        if(StringUtils.isNoneBlank(newAdminBO.getPassword())) {
+        if(StringUtils.isNotBlank(newAdminBO.getPassword())) {
             String pwd = BCrypt.hashpw(newAdminBO.getPassword(),BCrypt.gensalt());
             adminUser.setPassword(pwd);
         }
         //如果人脸上传之后，则有faceId,需要和ADMIN信息关联存储入库
-        if(StringUtils.isNoneBlank(newAdminBO.getFaceId())) {
+        if(StringUtils.isNotBlank(newAdminBO.getFaceId())) {
             adminUser.setFaceId(newAdminBO.getFaceId());
         }
         adminUser.setCreatedTime(new Date());
