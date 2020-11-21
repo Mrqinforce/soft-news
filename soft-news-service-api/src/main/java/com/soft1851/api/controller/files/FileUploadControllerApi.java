@@ -4,10 +4,7 @@ import com.soft1851.pojo.bo.NewAdminBO;
 import com.soft1851.result.GraceResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,18 +42,32 @@ public interface FileUploadControllerApi {
     GraceResult uploadSomeFiles(@RequestParam String userId,
                                 MultipartFile[] files) throws Exception;
     /**
-     * 文件上传到MongoDB的GridFs中
+     * 从gridFS中读取文件
      *
-     * @param newAdminBO 入参
+     * @param faceId 人脸id
      * @param request 请求
      * @param response 响应
-     * @return 返回
+     *
      * @throws Exception 异常
      */
-    @ApiOperation(value = "文件上传到MongoDB的GridFs中",notes = "文件上传到MongoDB的GridFs中",httpMethod = "POST")
-    @PostMapping("/uploadToGridFs")
-    GraceResult uploadToGridFs(@RequestBody NewAdminBO newAdminBO,
-                               HttpServletRequest request, HttpServletResponse response) throws Exception;
+    @ApiOperation(value = "从gridFS中读取文件",notes = "从gridFS中读取文件",httpMethod = "GET")
+    @GetMapping("/readInGridFS")
+    GraceResult readInGridFs(@RequestParam String faceId, HttpServletRequest request,
+                      HttpServletResponse response) throws Exception;
+
+    /**
+     * 管理员人脸入库
+     *
+     * @param
+     *
+     * @param username 管理员用户名
+     * @param multipartFile 人脸照片文件
+     * @throws Exception 异常
+     * @return
+     */
+    @ApiOperation(value = "管理员人脸入库",notes = "管理员人脸入库",httpMethod = "POST")
+    @PostMapping("/uploadToGridFS")
+    GraceResult uploadToGridFs(String username, @RequestParam(value = "file") MultipartFile multipartFile) throws Exception;
 
 
 }
