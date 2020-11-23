@@ -69,5 +69,18 @@ public interface FileUploadControllerApi {
     @PostMapping("/uploadToGridFS")
     GraceResult uploadToGridFs(String username, @RequestParam(value = "file") MultipartFile multipartFile) throws Exception;
 
+    /**
+     * 从gridfs中读取图片内容，并且返回base64
+     *
+     * @param faceId 人脸id
+     *
+     * @param request 请求
+     * @param response 响应
+     * @return GraceResult
+     * @throws Exception 异常
+     */
+    @GetMapping("/readFace64")
+    GraceResult readFace64(@RequestParam String faceId, HttpServletRequest request, HttpServletResponse response) throws Exception;
+
 
 }
