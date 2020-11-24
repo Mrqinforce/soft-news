@@ -1,7 +1,10 @@
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/YesOrNo.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/org/n3r/idworker/Sid.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/UserStatus.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/org/n3r/idworker/RandomCodeStrategy.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/ArticleAppointType.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/utils/DesensitizationUtil.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/ArticleCoverType.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/utils/FileUtil.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/org/n3r/idworker/strategy/FileLock.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/utils/FaceVerifyUtil.java
@@ -16,6 +19,7 @@
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/ArticleReviewLevel.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/org/n3r/idworker/InvalidSystemClock.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/result/ResponseStatusEnum.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/ArticleReviewStatus.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/org/n3r/idworker/strategy/DefaultWorkerIdStrategy.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/enums/FaceVerifyType.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-common/src/main/java/com/soft1851/utils/PageGridResult.java

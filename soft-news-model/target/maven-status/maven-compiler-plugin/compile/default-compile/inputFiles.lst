@@ -1,9 +1,12 @@
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/Fans.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/Category.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/SaveFriendLinkBO.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/AppUser.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/NewArticleBO.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/RegistLoginBO.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/validate/CheckUrlValidate.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/mo/FriendLinkMO.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/Article.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/vo/AppUserVO.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/pojo/bo/UpdateUserInfoBO.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-model/src/main/java/com/soft1851/validate/CheckUrl.java
