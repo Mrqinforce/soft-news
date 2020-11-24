@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>article</title>
+
+    <style>
+      .container {
+        width: 100%;
+        height: 700px;
+        background-color: ghostwhite;
+      }
+      .top-bar {
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          display: flex;
+          width: 100%;
+          height: 100px;
+      }
+
+      .top-bar-font {
+        font-size: 16px;
+        color: red;
+      }
+      .box {
+        display: flex;
+
+        flex-direction: column;
+
+        position: relative;
+
+        width: 800px;
+        height: 600px;
+
+
+        margin-top: 100px;
+        margin-left: 300px;
+
+        background-color: white;
+      }
+      .box-text {
+          position: absolute;
+          left: 20px;
+          font-size: 20px;
+          color: gainsboro;
+      }
+      img {
+          width: 20px;
+          height: 20px;
+      }
+
+      .font {
+        font-size: 16px;
+
+        color: rgb(232, 232, 232);
+      }
+
+      .font1 {
+        font-size: 14px;
+
+        color: #eeeeee;
+      }
+
+      .bottom-bar {
+            display: flex;
+            position: fixed;
+            height: 100px;
+            width: 100%;
+            background-color: white;
+            box-shadow: 1px black;
+            z-index: 1000;
+            bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="top-bar">
+          <text class="top-bar-font"> 新闻 </text>
+        </div>
+        <div class="box">
+          <p class="box-text">请输入文字标题（6-30长度）</p>
+          <div v-for="(item, index) in Button" :key="index">{{item}}</div>
+          <div style="display: flex;">
+            <img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png"/>
+            <!-- <button class="hh button" @click="addBod()">加粗</button> -->
+           
+          </div>
+        </div>
+        <div class="bottom-bar"></div>
+      </div>
+    </div>
+
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+            Button:[
+                "https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png"
+            ],
+        },
+        created() {},
+        methods: {},
+      });
+    </script>
+  </body>
+</html>
