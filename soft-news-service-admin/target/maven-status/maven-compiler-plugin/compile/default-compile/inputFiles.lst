@@ -1,5 +1,9 @@
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/controller/AdminMsgController.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/service/AdminUserService.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/controller/FriendLinkController.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/service/impl/AdminUserServiceImpl.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/service/impl/FriendLinkServiceImpl.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/repository/FriendLinkRepository.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/mapper/AdminUserMapper.java
 /Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/Application.java
+/Users/shahuhudexiaobinggan/Documents/soft-news/soft-news-service-admin/src/main/java/com/soft1851/admin/service/FriendLinkService.java

@@ -101,7 +101,7 @@ public interface AdminMsgControllerApi {
      * @param response 响应
      * @return 返回
      */
-    @ApiOperation(value = "管理员人脸登录",notes = "管理员人脸登录",httpMethod = "GET")
+    @ApiOperation(value = "管理员人脸登录",notes = "管理员人脸登录",httpMethod = "POST")
     @PostMapping("/adminFaceLogin")
     GraceResult adminFaceLogin(@RequestBody AdminLoginBO adminLoginBO,
                                HttpServletRequest request,

@@ -10,12 +10,14 @@ org/n3r/idworker/utils/Serializes.class
 com/soft1851/result/GraceResult.class
 com/soft1851/utils/extend/AliImageReviewUtil.class
 com/soft1851/utils/DesensitizationUtil.class
+com/soft1851/utils/FaceVerifyUtil.class
 org/n3r/idworker/WorkerIdStrategy.class
 org/n3r/idworker/InvalidSystemClock.class
 com/soft1851/utils/extend/AliyunResource.class
 com/soft1851/utils/RedisOperator.class
 META-INF/spring-configuration-metadata.json
 com/soft1851/enums/UserStatus.class
+com/soft1851/utils/PageGridResult.class
 com/soft1851/utils/JsonUtil.class
 com/soft1851/utils/IpUtil.class
 org/n3r/idworker/Code.class
@@ -36,6 +38,8 @@ com/soft1851/enums/ArticleReviewLevel.class
 org/n3r/idworker/strategy/DayPrefixRandomCodeStrategy.class
 org/n3r/idworker/Id.class
 org/n3r/idworker/Sid.class
+com/soft1851/enums/FaceVerifyType.class
 org/n3r/idworker/Sid$1.class
 org/n3r/idworker/strategy/DefaultWorkerIdStrategy$1.class
 org/n3r/idworker/strategy/DefaultWorkerIdStrategy.class
+com/soft1851/utils/UrlUtil.class
