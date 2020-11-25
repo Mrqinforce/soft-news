@@ -36,4 +36,8 @@ public interface ArticleService {
     void updateAppointToPublish();
 
     void updateArticleStatus(String articleId,Integer pendingStatus);
+
+    void deleteArticle(String userId,String articleId);
+
+    void withdrawArticle(String userId,String articleId);
 }

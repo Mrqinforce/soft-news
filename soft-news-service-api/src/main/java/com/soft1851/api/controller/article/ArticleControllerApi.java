@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -21,4 +22,16 @@ public interface ArticleControllerApi {
     @ApiOperation(value = "用户发文",notes = "用户发文",httpMethod = "POST")
     @PostMapping("createArticle")
     GraceResult createArticle(@RequestBody @Valid NewArticleBO newArticleBO, BindingResult result);
+
+    @PostMapping("/doReview")
+    @ApiOperation(value = "管理员审核文章",notes = "管理员审核文章",httpMethod = "POST")
+    GraceResult doReview(@RequestParam String articleId, @RequestParam Integer passOrNot);
+
+    @PostMapping("/delete")
+    @ApiOperation(value = "用户删除文章",notes = "用户删除文章",httpMethod = "POST")
+    GraceResult delete(@RequestParam String userId,@RequestParam String articleId);
+
+    @PostMapping("/withdraw")
+    @ApiOperation(value = "用户撤回文章",notes = "用户撤回文章",httpMethod = "POST")
+    GraceResult withdraw(@RequestParam String userId,@RequestParam String articleId);
 }
