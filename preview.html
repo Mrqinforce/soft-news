@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title>文章预览</title>
+		<link rel="stylesheet" href="css/detail.css"  />
+		<link rel="stylesheet" href="css/detail.css"  />
+		<link rel="stylesheet" href="css/comments.css"  />
+		<link rel="stylesheet" href="css/middleBar.css"  />
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+		<!-- <style type="text/css"></style> -->
+	</head>
+	<body>
+		<div>
+			<div id="app" class = "container">
+				<div class="big-title">{{article.title}}</div>
+				<div class="detail-really">
+					<div class="left-social">
+						<div class="date-title">
+							<span class="year">{{year}}</span>
+						</div>
+						<div class="back-year-line"></div>
+						<div class="date-md">{{monthDay}}</div>
+						<div class="date-times">{{time}}</div>
+						<div class="writer-name">{{userInfo.nickname}}</div>
+					</div>
+					<div class="container-middle">
+						<div class="article-wrapper">
+							<div class="content" v-html="article.content"></div>
+							<div class="declare">本平台所有内容仅供测试</div>
+						</div>
+					</div>
+					<div class="blank-right"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="libs/vue.min.js"></script>
+	<script src="libs/jquery-3.4.1.min.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="libs/moment-with-locales.min.js"></script>
+	<script type="text/javascript">
+		var articleList = new Vue({
+			el:'#app',
+			data:{
+				article:{},
+				userInfo:{
+					nickname:'qj',
+				},
+			},
+			created() {
+				this.previewArticle()
+			},
+			mounted() {
+				
+			},
+			methods:{
+				previewArticle(){
+					var articleBOStr = sessionStorage.getItem('previewArticleInfo')
+					var article = JSON.parse(articleBOStr)
+					this.article = article
+					var year = moment(new Date()).format('YYYY')
+					this.year = year
+					var monthDay = moment(new Date()).format('MM/DD')
+					this.monthDay = monthDay
+					var time = moment(new Date()).format("HH:mm")
+					this.time = time
+				}
+			}
+		})
+	</script>
+</html>
+
