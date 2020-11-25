@@ -1,116 +1,155 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/icon/icons8_storage.ico" type="image/x-icon">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <title>article</title>
-
-    <style>
-      .container {
-        width: 100%;
-        height: 700px;
-        background-color: ghostwhite;
-      }
-      .top-bar {
-          position: fixed;
-          top: 0;
-          z-index: 1000;
-          display: flex;
-          width: 100%;
-          height: 100px;
-      }
-
-      .top-bar-font {
-        font-size: 16px;
-        color: red;
-      }
-      .box {
-        display: flex;
-
-        flex-direction: column;
-
-        position: relative;
-
-        width: 800px;
-        height: 600px;
-
-
-        margin-top: 100px;
-        margin-left: 300px;
-
-        background-color: white;
-      }
-      .box-text {
-          position: absolute;
-          left: 20px;
-          font-size: 20px;
-          color: gainsboro;
-      }
-      img {
-          width: 20px;
-          height: 20px;
-      }
-
-      .font {
-        font-size: 16px;
-
-        color: rgb(232, 232, 232);
-      }
-
-      .font1 {
-        font-size: 14px;
-
-        color: #eeeeee;
-      }
-
-      .bottom-bar {
-            display: flex;
-            position: fixed;
-            height: 100px;
-            width: 100%;
-            background-color: white;
-            box-shadow: 1px black;
-            z-index: 1000;
-            bottom: 0;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="app">
-      <div class="container">
-        <div class="top-bar">
-          <text class="top-bar-font"> 新闻 </text>
-        </div>
-        <div class="box">
-          <p class="box-text">请输入文字标题（6-30长度）</p>
-          <div v-for="(item, index) in Button" :key="index">{{item}}</div>
-          <div style="display: flex;">
-            <img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png"/>
-            <!-- <button class="hh button" @click="addBod()">加粗</button> -->
-           
-          </div>
-        </div>
-        <div class="bottom-bar"></div>
-      </div>
+<body>
+    <div class="top">
+        <p style="margin-top: 0px;">新闻</p>
     </div>
-
+    <div class="content">
+        <div class="head">请输入文字标题(6-30长度)</div>
+        <div class="tools">
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png" ></div>
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/下划线.png" ></div>
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/图片.png" ></div>
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/倾斜-22.png" ></div>
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png" ></div>
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png" ></div>
+            <div class="tool"><img src="https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/无序排列.png" ></div>
+        </div>
+        <div class="box">请输入正文...</div>
+        </textarea>
+        <div class="choose-area">
+            <div class="type">
+                <span>文章类型</span>
+            </div>
+            <div class="cover">
+                <span>文章封面</span>
+            </div>
+         
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="botton-group">
+            <button>返回</button>
+            <button>预览</button>
+            <button>定时发布</button>
+            <button class="fabu-btn">发布文章</button>
+        </div>
+    </div>
     <script>
-      var vm = new Vue({
-        el: "#app",
-        data: {
-            Button:[
-                "https://sillyforce.oss-cn-beijing.aliyuncs.com/markdown/703编辑器_B加粗.png"
-            ],
-        },
-        created() {},
-        methods: {},
-      });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {}
+        });
     </script>
-  </body>
+</body>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        padding: 10px;
+        margin-top: 50px;
+        background-color: rgb(233, 229, 229);
+    }
+    .content{
+        padding: 10px;
+        width: 65%;
+        height: 500px;
+        border: 1px solid rgba(198, 200, 202, 0.9);
+        display: flex;
+        flex-direction: columns;
+        background-color: white;
+    }
+    .head{
+       
+        font-size: 20px;
+        font-weight: 550;
+        color: rgba(184, 187, 190, 0.9);
+    }
+    .tools{
+        width: 90%;
+        height: 30px;
+        margin-top: 20px;
+        display: flex;
+    }
+    .tool{
+        border: 1px solid rgb(168, 165, 165);
+        margin: 5px;
+        height: 20px;
+        min-width: 30px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 2px;
+        color: rgba(51, 53, 54, 0.9);
+    }
+    img{
+        width: 20px;
+        height: 20px;
+    }
+    .box {
+        height: 300px;
+        width: 900px;
+        margin-top: 20px;
+        background-color: white;
+        border: 1px solid rgba(175, 178, 180, 0.9);
+        box-shadow: 1px rgba(7, 7, 7, 0.5);
+    }
+    .top{
+        display: flex;
+        border: 1px solid rgba(175, 178, 180, 0.9);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        height: 50px;
+        width: 100%;
+        background-color:white;
+        font-size: 25px;
+        font-weight: 600;
+        color: red;
+        box-shadow: 1px rgba(7, 7, 7, 0.5);
+    }
+    .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        height: 50px;
+        width: 100%;
+        background-color: white;
+       
+    }
+    .botton-group{
+        width: 65%;
+        display: flex;
+        color: white;
+    }
+    button{
+        
+        margin: 10px;
+        width: 80px;
+        font-weight: 550;
+        height: 35px;
+        border-radius: 5px;
+    }
+    .fabu-btn{
+        color: white;
+        background-color: rgb(145, 8, 8);
+    }
+</style>
 </html>

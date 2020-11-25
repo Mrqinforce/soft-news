@@ -19,6 +19,6 @@ import javax.validation.Valid;
 @RequestMapping("article")
 public interface ArticleControllerApi {
     @ApiOperation(value = "用户发文",notes = "用户发文",httpMethod = "POST")
-    @PostMapping("createAricle")
+    @PostMapping("createArticle")
     GraceResult createArticle(@RequestBody @Valid NewArticleBO newArticleBO, BindingResult result);
 }

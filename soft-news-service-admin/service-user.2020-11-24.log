@@ -2691,3 +2691,22 @@ Caused by: java.net.SocketTimeoutException: connect timed out
 	... 3 common frames omitted
 2020-11-24 19:49:49.292 [cluster-ClusterId{value='5fbc9c714a23835cebd00b20', description='null'}-121.196.101.85:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:9, serverValue:377}] to 121.196.101.85:27017
 2020-11-24 19:49:49.321 [cluster-ClusterId{value='5fbc9c714a23835cebd00b20', description='null'}-121.196.101.85:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=121.196.101.85:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 2]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15812473}
+2020-11-24 23:00:15.458 [cluster-ClusterId{value='5fbc9c714a23835cebd00b20', description='null'}-121.196.101.85:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 121.196.101.85:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-11-24 23:01:31.275 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-24 23:01:31.431 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:2, serverValue:367}] to 121.196.101.85:27017 because there was a socket exception raised on another connection from this pool.
