@@ -34,4 +34,6 @@ public interface ArticleService {
      * 更新定时发布为即时发布
      */
     void updateAppointToPublish();
+
+    void updateArticleStatus(String articleId,Integer pendingStatus);
 }
