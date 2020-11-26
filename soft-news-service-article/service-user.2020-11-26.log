@@ -105,3 +105,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 2020-11-26 15:32:49.569 [main] INFO  c.s.article.ArticleApplication - Started ArticleApplication in 14.336 seconds (JVM running for 16.906)
 2020-11-26 15:32:50.030 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - DateSourceHikariCP - Starting...
 2020-11-26 15:32:50.660 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - DateSourceHikariCP - Start completed.
+2020-11-26 16:01:56.876 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-11-26 16:01:56.898 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-26 16:01:56.968 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DateSourceHikariCP - Shutdown initiated...
+2020-11-26 16:01:57.067 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DateSourceHikariCP - Shutdown completed.

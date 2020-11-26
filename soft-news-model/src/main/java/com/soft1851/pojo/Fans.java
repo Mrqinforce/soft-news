@@ -1,6 +1,7 @@
 package com.soft1851.pojo;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class Fans {
     @Id
