@@ -1,9 +1,6 @@
 package com.soft1851.api.config;
 
-import com.soft1851.api.interceptors.AdminTokenInterceptor;
-import com.soft1851.api.interceptors.PassportInterceptor;
-import com.soft1851.api.interceptors.UserActiveInterceptor;
-import com.soft1851.api.interceptors.UserTokenInterceptor;
+import com.soft1851.api.interceptors.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -35,6 +32,11 @@ public class InterceptorConfig implements WebMvcConfigurer {
         return new AdminTokenInterceptor();
     }
 
+    @Bean
+    public ArticleReadInterceptor articleReadInterceptor() {
+        return new ArticleReadInterceptor();
+    }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(passportInterceptor())
@@ -48,5 +50,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
 //                .addPathPatterns("/fans/follow");
         registry.addInterceptor(adminTokenInterceptor())
                 .addPathPatterns("/adminMsg/adminIsExist");
+
+        registry.addInterceptor(articleReadInterceptor())
+                .addPathPatterns("/article/readArticle");
     }
 }

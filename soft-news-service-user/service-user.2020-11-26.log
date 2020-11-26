@@ -551,3 +551,4 @@ java.lang.NullPointerException: null
  at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.soft1851.pojo.bo.RegistLoginBO["smsCode"])]
 2020-11-26 18:46:34.022 [http-nio-8003-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Illegal unquoted character ((CTRL-CHAR, code 10)): has to be escaped using backslash to be included in string value; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Illegal unquoted character ((CTRL-CHAR, code 10)): has to be escaped using backslash to be included in string value
  at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.soft1851.pojo.bo.RegistLoginBO["smsCode"])]
+2020-11-26 18:56:22.664 [http-nio-8003-exec-3] INFO  c.s.u.service.impl.UserServiceImpl - 从数据库查询用户信息！！！
