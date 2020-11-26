@@ -14,17 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date 2020/11/17
  * @Version 1.0
  **/
-@Api(value = "粉丝信息相关Controller",tags = {"粉丝信息相关Controller"})
+@Api(value = "粉丝管理",tags = {"粉丝管理"})
 @RequestMapping("fans")
 public interface FansControllerApi {
-    /**
-     * 获取粉丝基础信息
-     *
-     *
-     * @return
-     */
-    @ApiOperation(value = "获取粉丝基础信息",notes = "获取粉丝基础信息",httpMethod = "POST")
-    @PostMapping("/follow")
-    GraceResult follow();
+    @PostMapping("isMeFollowThisWriter")
+    @ApiOperation(value = "查询当前用户是否关注作者",notes = "查询当前用户是否关注作者",httpMethod = "POST")
+    GraceResult isMeFollowThisWriter(@RequestParam String writerId,@RequestParam String fanId);
+
+    @PostMapping("follow")
+    @ApiOperation(value = "关注作者，成为粉丝",notes = "关注作者，成为粉丝",httpMethod = "POST")
+    GraceResult follow(@RequestParam String writerId,@RequestParam String fanId);
 }
 
