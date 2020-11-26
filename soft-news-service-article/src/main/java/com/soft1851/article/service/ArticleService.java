@@ -2,9 +2,7 @@ package com.soft1851.article.service;
 
 import com.soft1851.pojo.Category;
 import com.soft1851.pojo.bo.NewArticleBO;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
+import com.soft1851.pojo.vo.ArticleDetailVO;
 
 /**
  * @ClassName $(Name)
@@ -40,4 +38,6 @@ public interface ArticleService {
     void deleteArticle(String userId,String articleId);
 
     void withdrawArticle(String userId,String articleId);
+
+    ArticleDetailVO queryDetail(String articleId);
 }
